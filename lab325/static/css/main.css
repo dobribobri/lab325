@@ -15,6 +15,13 @@ header {
     top: 0px;
     background: #fff;
 }
+header::after {
+    content: "";
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    background: #fff;
+}
 
 .top {
     width: 100%;
@@ -45,6 +52,11 @@ div.caption {
     margin-left: 10px;
     font-family: Montserrat;
 }
+@media only screen and (max-width: 1620px) {
+    div.caption {
+        visibility: hidden;
+    }
+}
 
 /***** Menu *****/
 .control {
@@ -62,13 +74,23 @@ div.security a:hover {
     color: darkorange;
 }
 
+div.menu {  }
+@media only screen and (max-width: 1620px) {
+    div.menu {
+        display: none;
+    }
+}
 div.menu ul {
     list-style: none; /*убираем маркеры списка*/
     margin: 0; /*убираем отступы*/
-    padding-left: 0; /*убираем отступы*/
+    padding-left: 10px; /*убираем отступы*/
     margin-top: 5px; /*делаем отступ сверху*/
     background: forestgreen; /*добавляем фон всему меню*/
     height: 50px; /*задаем высоту*/
+    border-width: 0px 0;
+    border-style: solid none;
+    border-radius: 6px;
+    border-color: transparent;
 }
 div.menu a {
     text-decoration: none; /*убираем подчеркивание текста ссылок*/
@@ -97,6 +119,8 @@ div.menu li > ul {
     position: absolute;
     top: 45px;
     display: none;
+    border-radius: 0px;
+    padding-left: 0px;
 }
 /*Делаем скрытую часть видимой*/
 div.menu li:hover > ul {
@@ -105,14 +129,6 @@ div.menu li:hover > ul {
 }
 div.menu li:hover > ul > li {
     float: none; /*Убираем горизонтальное позиционирование*/
-}
-
-div.menu::after {
-    content: "";
-    display: block;
-    height: 30px;
-    line-height: 30px;
-    background: #fff;
 }
 
 /***** Content *****/
