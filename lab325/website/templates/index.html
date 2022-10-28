@@ -12,37 +12,63 @@
 </head>
 
 <body>
+	<header>
+	<div class="top">
+		<div class="logo">
+		    <a href="{% url 'index' %}"><img src='{% static "img/logo.png" %}' /></a>
+		</div>
 
-	<div class="header">
-		<a href="{% url 'index' %}"><img src='{% static "img/logo.png" %}' /></a>
+		<div class="caption">
+			<p style="line-height: 1em; font-weight: 400;">Институт радиотехники и электроники им. В.А. Котельникова РАН</p>
+			<p style="line-height: 0.1em; font-weight: 600;">Лаборатория радиофизических методов в аэрокосмических исследованиях
+				природно-техногенной среды</p>
+		</div>
 	</div>
 
-	<div class="security">
-	{% if user.is_authenticated %}
-		Вы вошли как {{ username }}&nbsp;&nbsp;|&nbsp;&nbsp;
-		<a href="{% url 'settings' %}">Профиль</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-		<a href="{% url 'logout' %}">Выход</a>
-	{% else %}
-		<a href="{% url 'register' %}">Регистрация</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-		<a href="{% url 'login' %}">Вход</a>
-	{% endif %}
-	</div>
+	<div class="control">
+		<div class="security">
+			{% if user.is_authenticated %}
+				Вы вошли как {{ username }}&nbsp;&nbsp;|&nbsp;&nbsp;
+				<a href="{% url 'settings' %}">Профиль</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+				<a href="{% url 'logout' %}">Выход</a>
+			{% else %}
+				<a href="{% url 'register' %}">Регистрация</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+				<a href="{% url 'login' %}">Вход</a>
+			{% endif %}
+		</div>
 
-	<div class="menu">
-		<ul>
-			<li><a href="#">Новости</a></li>
-			<li><a href="#">Исследования</a>
-				<ul>
-					<li><a href="#">Участие в грантах</a></li>
-					<li><a href="#">Достижения лаборатории</a></li>
-				</ul>
-			</li>
-			<li><a href="#">Публикации</a></li>
-			<li><a href="#">Состав лаборатории</a></li>
-			<li><a href="#">Вычислительный центр</a></li>
-			<li><a href="#">Полезные ссылки</a></li>
-			<li><a href="#">Почтовый сервер</a></li>
-		</ul>
+		<div class="menu">
+			<ul>
+				<li><a href="#">Новости</a></li>
+				<li><a href="#">Исследования</a>
+					<ul>
+						<li><a href="#">Участие в грантах</a></li>
+						<li><a href="#">Достижения лаборатории</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Публикации</a></li>
+				<li><a href="#">Состав лаборатории</a></li>
+				<li><a href="#">Вычислительный центр</a></li>
+				<li><a href="#">Полезные ссылки</a></li>
+				<li><a href="#">Почтовый сервер</a></li>
+			</ul>
+		</div>
+	</div>
+	</header>
+
+	<div class="content">
+		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
+		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
+		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
+		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
+		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
+		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
+		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
+		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
+		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
+		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
+		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
+		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
 	</div>
 
 </body>
