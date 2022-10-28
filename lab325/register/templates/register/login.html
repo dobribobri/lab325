@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лаборатория #325 - ИРЭ им. В.А. Котельникова РАН</title>
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet" type="text/css">
+{% load static %}
+<link href='{% static "css/main.css" %}' rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href='{% static "img/favicon.ico" %}' type="image/x-icon">
+
+{% load crispy_forms_tags %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+
+	input[type=submit] {
+        display: inline-block;
+        color: white;
+        text-decoration: none;
+        padding: 15px 20px;
+        outline: none;
+        border-width: 2px 0;
+        border-style: solid none;
+        border-radius: 6px;
+        background: #648da7;
+        margin-top: 20px;
+        font-weight: bold;
+    }
+    input[type=submit]:hover {
+        border: 2px solid #ff7f00;
+        background: #ff7f00;
+        cursor: pointer;
+        color: #fff;
+    }
+    fieldset {
+	  min-width: 0;
+	  padding: 0;
+	  margin: 0;
+	  border: 0;
+	}
+	select.form-control  {
+		margin-top: 5px;
+		border: 1px solid #648da7;
+		border-radius: 3px;
+		width: 40%;
+		height: 30px;
+		font-size: 16px;
+		padding-left: 10px;
+		margin-bottom: 10px;
+		background: #fdfdfd;
+	}
+	input[type="text"].form-control , input[type="password"].form-control  {
+	    margin-top: 5px;
+		border: 1px solid #648da7;
+		border-radius: 3px;
+		width: 60%;
+		height: 30px;
+		font-size: 16px;
+		padding-left: 10px;
+		margin-bottom: 10px;
+		background: #fdfdfd;
+	}
+	input[type=text].form-control:focus, input[type="password"].form-control:focus {
+    	border-color: #ff7f00;
+	}
+</style>
+</head>
+
+<body>
+
+	<div class="header">
+		<a href="{% url 'index' %}"><img src='{% static "img/logo.png" %}' /></a>
+	</div>
+
+
+	<div class="security">
+	{% if user.is_authenticated %}
+		Вы вошли как {{ username }}&nbsp;&nbsp;|&nbsp;&nbsp;
+		<a href="{% url 'settings' %}">Профиль</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<a href="{% url 'logout' %}">Выход</a>
+	{% else %}
+		<a href="{% url 'register' %}">Регистрация</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<a href="{% url 'login' %}">Вход</a>
+	{% endif %}
+	</div>
+
+
+	<div class="content_block">
+
+		{% block start %}
+		 <div>
+		  <center>
+		  <form method="POST" style="border: 1px solid black; margin: 4%; padding:10%; border-radius:1%;">
+			{% csrf_token %}
+			<fieldset>
+			  {{ form|crispy}}
+			</fieldset>
+
+			  <div align="center" style="margin-top: 5px;">
+				<input type="submit" value="Войти" style="width: 150px; height: 50px; margin-bottom: 20px;">
+				</div>
+		  <br/>
+		  <sub style="text-align: left;"><a href="{% url 'register' %}" style="text-decoration: none; color: blue; padding:2%; cursor:pointer; margin-right:2%;">Нет аккаунта. Зарегистрироваться</a></sub>
+		  </form>
+		  </center>
+		 </div>
+		{% endblock %}
+
+	</div>
+
+</body>
+</html>

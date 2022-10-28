@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лаборатория #325 - ИРЭ им. В.А. Котельникова РАН</title>
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet" type="text/css">
+{% load static %}
+<link href='{% static "css/main.css" %}' rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href='{% static "img/favicon.ico" %}' type="image/x-icon">
+</head>
+
+<body>
+
+	<div class="header">
+		<a href="{% url 'index' %}"><img src='{% static "img/logo.png" %}' /></a>
+	</div>
+
+	<div class="security">
+	{% if user.is_authenticated %}
+		Вы вошли как {{ username }}&nbsp;&nbsp;|&nbsp;&nbsp;
+		<a href="{% url 'settings' %}">Профиль</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<a href="{% url 'logout' %}">Выход</a>
+	{% else %}
+		<a href="{% url 'register' %}">Регистрация</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<a href="{% url 'login' %}">Вход</a>
+	{% endif %}
+	</div>
+
+	<div class="menu">
+		<ul>
+			<li><a href="#">Новости</a></li>
+			<li><a href="#">Исследования</a>
+				<ul>
+					<li><a href="#">Участие в грантах</a></li>
+					<li><a href="#">Достижения лаборатории</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Публикации</a></li>
+			<li><a href="#">Состав лаборатории</a></li>
+			<li><a href="#">Вычислительный центр</a></li>
+			<li><a href="#">Полезные ссылки</a></li>
+			<li><a href="#">Почтовый сервер</a></li>
+		</ul>
+	</div>
+
+</body>
+</html>

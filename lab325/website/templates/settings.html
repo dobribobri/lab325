@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лаборатория #325 - ИРЭ им. В.А. Котельникова РАН</title>
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet" type="text/css">
+{% load static %}
+<link href='{% static "css/main.css" %}' rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href='{% static "img/favicon.ico" %}' type="image/x-icon">
+
+<link href='{% static "css/input.css" %}' rel="stylesheet" type="text/css">
+<link href='{% static "css/form.css" %}' rel="stylesheet" type="text/css">
+
+{% load crispy_forms_tags %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+	<div class="header">
+		<a href="{% url 'index' %}"><img id="logo" src='{% static "img/logo.png" %}' /></a>
+	</div>
+
+	<div class="security">
+		{% if user.is_authenticated %}
+			Вы вошли как {{ username }}&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="{% url 'settings' %}">Профиль</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="{% url 'logout' %}">Выход</a>
+		{% else %}
+            <a href="{% url 'register' %}">Регистрация</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="{% url 'login' %}">Вход</a>
+		{% endif %}
+	</div>
+
+
+	<div class="content_block">
+
+	  {% block start %}
+		{% if user.is_authenticated %}
+		<div>
+			{% if profile.fulfilled %}
+			<div style="margin-top: 20px; text-align: center;">
+				Изменения сохранены.<p>
+			</div>
+
+			{% else %}
+			<div style="margin-top: 20px; text-align: center;">
+				Заполните, пожалуйста, следующие поля.<p>
+			</div>
+
+			{% endif %}
+		<form method="post" style="border: 0px solid black; margin: 4%; padding-left: 8%; padding-right: 8%; border-radius: 1%;">
+			  {% csrf_token %}
+			  <fieldset>
+
+			  {{ profile_form|crispy }}
+				  <br><hr style="border: 0px; height: 1px; background-color: #e0e0e0; width: 100%;"><br>
+			  {{ user_form|crispy }}
+			  </fieldset>
+
+			<div align="center" style="margin-top: 5px;">
+			<input type="submit" value="Сохранить" style="width: 150px; height: 50px; margin-bottom: 20px;">
+			</div>
+		</form>
+		</div>
+
+		{% else %}
+		<div style="margin-top: 20px; text-align: center;">
+			Вы не авторизованы! Выполните
+			<a href="{% url 'login' %}">вход</a>.
+		</div>
+		{% endif %}
+	  {% endblock %}
+
+	</div>
+
+</body>
+</html>
