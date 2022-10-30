@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from django.utils.translation import ugettext_lazy
+from django.utils.translation import gettext_lazy
 
 
 # Create your models here.
@@ -26,8 +26,8 @@ class UserProfile(models.Model):
         return str(self.user)
 
     class Meta:
-        verbose_name = ugettext_lazy("Профиль пользователя")
-        verbose_name_plural = ugettext_lazy("Профили пользователей")
+        verbose_name = gettext_lazy("Профиль пользователя")
+        verbose_name_plural = gettext_lazy("Профили пользователей")
 
 
 @receiver(post_save, sender=User)

@@ -19,8 +19,8 @@
 		</div>
 
 		<div class="caption">
-			<p style="line-height: 1em; font-weight: 400;">Институт радиотехники и электроники им. В.А. Котельникова РАН</p>
-			<p style="line-height: 0.1em; font-weight: 600;">Лаборатория радиофизических методов в аэрокосмических исследованиях
+			<p style="font-weight: 400;">Институт радиотехники и электроники им. В.А. Котельникова РАН</p>
+			<p style="font-weight: 600;">Лаборатория радиофизических методов в аэрокосмических исследованиях
 				природно-техногенной среды</p>
 		</div>
 	</div>
@@ -37,9 +37,9 @@
 			{% endif %}
 		</div>
 
-		<div class="menu">
-			<ul>
-				<li><a href="#">&nbsp;&nbsp;Новости&nbsp;</a></li>
+		<div class="menu" onclick="menuClick();">
+			<ul id="menu_content">
+				<li><a href="{% url 'index' %}" class="selected">&nbsp;&nbsp;Новости&nbsp;</a></li>
 				<li><a href="#">Исследования</a>
 					<ul>
 						<li><a href="#">Участие в грантах</a></li>
@@ -57,6 +57,21 @@
 	</header>
 
 	<div class="content">
+		lorem ipsum pupsi tutsi then google boogle toogle doogle me em truefwiebceb sdcdhbcodhb schsbcshb
+		svcbdhvbwhvbwe eurbvewur ewurgfybewurg euvhbwejv ev gfi wed2iu fiwfjn sadkfnwoeifqeo qwefoihweqbfuhb
+		wfqewhbfrqeu qweoifhhbqewof qw fqf qfqiwjefnqwf wfqwnf wqefjqwefiwqf qwfiuqwbef
+		lorem ipsum pupsi tutsi then google boogle toogle doogle me em truefwiebceb sdcdhbcodhb schsbcshb
+		svcbdhvbwhvbwe eurbvewur ewurgfybewurg euvhbwejv ev gfi wed2iu fiwfjn sadkfnwoeifqeo qwefoihweqbfuhb
+		wfqewhbfrqeu qweoifhhbqewof qw fqf qfqiwjefnqwf wfqwnf wqefjqwefiwqf qwfiuqwbef
+		lorem ipsum pupsi tutsi then google boogle toogle doogle me em truefwiebceb sdcdhbcodhb schsbcshb
+		svcbdhvbwhvbwe eurbvewur ewurgfybewurg euvhbwejv ev gfi wed2iu fiwfjn sadkfnwoeifqeo qwefoihweqbfuhb
+		wfqewhbfrqeu qweoifhhbqewof qw fqf qfqiwjefnqwf wfqwnf wqefjqwefiwqf qwfiuqwbef
+		lorem ipsum pupsi tutsi then google boogle toogle doogle me em truefwiebceb sdcdhbcodhb schsbcshb
+		svcbdhvbwhvbwe eurbvewur ewurgfybewurg euvhbwejv ev gfi wed2iu fiwfjn sadkfnwoeifqeo qwefoihweqbfuhb
+		wfqewhbfrqeu qweoifhhbqewof qw fqf qfqiwjefnqwf wfqwnf wqefjqwefiwqf qwfiuqwbef
+		lorem ipsum pupsi tutsi then google boogle toogle doogle me em truefwiebceb sdcdhbcodhb schsbcshb
+		svcbdhvbwhvbwe eurbvewur ewurgfybewurg euvhbwejv ev gfi wed2iu fiwfjn sadkfnwoeifqeo qwefoihweqbfuhb
+		wfqewhbfrqeu qweoifhhbqewof qw fqf qfqiwjefnqwf wfqwnf wqefjqwefiwqf qwfiuqwbef
 		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
 		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
 		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
@@ -70,6 +85,20 @@
 		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
 		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
 	</div>
+
+<script>
+    var ul = document.getElementById('menu_content');
+
+	function menuClick() {
+	    ul.style.display = 'block';
+	    if (window.innerWidth <= 1620) ul.style.height = window.innerHeight + 'px';
+	}
+
+	window.addEventListener('resize', function (){
+	    if (window.innerWidth > 1620) ul.style.height = '50px';
+	    else ul.style.height = window.innerHeight + 'px';
+	});
+</script>
 
 </body>
 </html>
