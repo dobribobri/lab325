@@ -36,16 +36,16 @@ class PublicationTypes:
 class NewsBlock(models.Model):
     caption = models.CharField(verbose_name='Заголовок', max_length=254)
 
-    annotation = models.TextField(verbose_name='Аннотация', null=True, blank=True)
+    # annotation = models.TextField(verbose_name='Аннотация', null=True, blank=True)
 
-    image = models.ImageField(verbose_name='Изображение', null=True, blank=True)
+    # image = models.ImageField(verbose_name='Изображение', null=True, blank=True)
 
     desc = models.TextField(verbose_name='Текст', null=True, blank=True)
 
     file = models.FileField(verbose_name='Прикрепить файл (извещение)', null=True, blank=True)
     filetype = models.CharField(verbose_name='Тип файла', max_length=254, null=True, blank=True,
                                 choices=FileTypes.choices)
-    url = models.CharField(verbose_name='Ссылка', max_length=254, null=True, blank=True)
+    url = models.CharField(verbose_name='Ссылка на источник', max_length=254, null=True, blank=True)
 
     def __str__(self):
         return "Новость - " + str(self.caption)
@@ -58,7 +58,7 @@ class NewsBlock(models.Model):
 class AnnouncementConferenceBlock(models.Model):
     caption = models.CharField(verbose_name='Название конференции', max_length=254)
 
-    image = models.ImageField(verbose_name='Изображение', null=True, blank=True)
+    # image = models.ImageField(verbose_name='Изображение', null=True, blank=True)
 
     desc = models.TextField(verbose_name='Информация', null=True, blank=True)
 
@@ -68,7 +68,7 @@ class AnnouncementConferenceBlock(models.Model):
     file = models.FileField(verbose_name='Прикрепить файл (извещение)', null=True, blank=True)
     filetype = models.CharField(verbose_name='Тип файла', max_length=254, null=True, blank=True,
                                 choices=FileTypes.choices)
-    url = models.CharField(verbose_name='Ссылка', max_length=254, null=True, blank=True)
+    url = models.CharField(verbose_name='Ссылка на источник', max_length=254, null=True, blank=True)
 
     def __str__(self):
         return "Анонс - " + str(self.caption)
@@ -81,7 +81,7 @@ class AnnouncementConferenceBlock(models.Model):
 class AnnouncementSeminarBlock(models.Model):
     caption = models.CharField(verbose_name='Заголовок', max_length=254)
 
-    image = models.ImageField(verbose_name='Изображение', null=True, blank=True)
+    # image = models.ImageField(verbose_name='Изображение', null=True, blank=True)
 
     desc = models.TextField(verbose_name='Информация', null=True, blank=True)
 
@@ -103,7 +103,7 @@ class AnnouncementSeminarBlock(models.Model):
 class SeminarBlock(models.Model):
     caption = models.CharField(verbose_name='Заголовок', max_length=254)
 
-    image = models.ImageField(verbose_name='Изображение', null=True, blank=True)
+    # image = models.ImageField(verbose_name='Изображение', null=True, blank=True)
 
     when = models.CharField(verbose_name='Когда', max_length=254)
     where = models.CharField(verbose_name='Где', max_length=254)

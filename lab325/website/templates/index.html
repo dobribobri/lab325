@@ -34,6 +34,7 @@
 				<a href="{% url 'settings' %}">Профиль</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 				<a href="{% url 'logout' %}">Выход</a>
 			{% else %}
+				<a href="admin">Панель администратора</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 				<a href="{% url 'register' %}">Регистрация</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 				<a href="{% url 'login' %}">Вход</a>
 			{% endif %}
