@@ -1,0 +1,78 @@
+{% if seminar_announcements %}
+	{% for block in seminar_announcements %}
+	<hr style="border: 0px; height: 1px; background-color: #e0e0e0; width: 100%;">
+	<!-- Блок - "Новости" -->
+	<div class="block">
+		<!-- Заголовок -->
+		{% if block.caption %}
+		<div class="field_caption">
+			<h2>{{ block.caption|safe }}</h2>
+		</div>
+		{% endif %}
+		<!-- Конец Заголовок -->
+
+		<div class="">
+			<!-- Изображение -->
+			{% if block.image %}
+			<div class="field_image">
+			<img src="{{ block.image.url }}" />
+			</div><br/>
+			{% endif %}
+			<!-- Конец Изображение -->
+
+			<!-- Описание -->
+			{% if block.desc %}
+			<div class="field_desc">
+			{{ block.desc|safe }}
+			</div>
+			{% endif %}
+			<!-- Описание -->
+
+			<!-- Когда -->
+			{% if block.when %}
+			<div class="field_when">
+				<u>Когда:</u>&nbsp;&nbsp;<b>{{ block.when|safe }}</b><br/><br/>
+			</div>
+			{% endif %}
+			<!-- Конец Когда -->
+
+			<!-- Где -->
+			{% if block.where %}
+			<div class="field_where">
+				<u>Где:</u>&nbsp;&nbsp;<i>{{ block.where|safe }}</i><br/><br/>
+			</div>
+			{% endif %}
+			<!-- Конец Где -->
+
+			<!-- Файл -->
+			{% if block.file %}
+			<table class="field_file" cellpadding="10">
+			<tr><td><b>Прикрепленный файл:</b>&nbsp;&nbsp;{{ block.file|safe }}</td></tr>
+			<tr><td>
+				<!-- Тип файла -->
+
+				{% if block.filetype %}
+				<div class="field_filetype">
+					<u>Тип файла:</u>&nbsp;&nbsp;{{ block.filetype|safe }}
+				</div>
+				{% endif %}
+				<!-- Конец Тип файла -->
+
+				<!-- Ссылка на скачивание -->
+				<div class="file_download">
+					<a class="btn" href="download/?target=news&id={{ block.id }}">Скачать</a>
+				</div>
+				<!-- Конец Ссылка на скачивание -->
+			</td></tr>
+			</table>
+			{% endif %}
+			<!-- Конец Файл -->
+		</div>
+	</div>
+	<!-- Конец Блок -->
+{% endfor %}
+
+{% else %}
+	<div class="fullw tc montserrat">Здесь пока ничего нет.</div>
+	<br/><br/>
+{% endif %}
