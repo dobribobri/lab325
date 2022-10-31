@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet" type="text/css">
 {% load static %}
 <link href='{% static "css/main.css" %}' rel="stylesheet" type="text/css">
+<link href='{% static "css/btn.css" %}' rel="stylesheet" type="text/css">
 <link rel="shortcut icon" href='{% static "img/favicon.ico" %}' type="image/x-icon">
 </head>
 
@@ -64,33 +65,17 @@
 	</header>
 
 	<div class="content">
-		lorem ipsum pupsi tutsi then google boogle toogle doogle me em truefwiebceb sdcdhbcodhb schsbcshb
-		svcbdhvbwhvbwe eurbvewur ewurgfybewurg euvhbwejv ev gfi wed2iu fiwfjn sadkfnwoeifqeo qwefoihweqbfuhb
-		wfqewhbfrqeu qweoifhhbqewof qw fqf qfqiwjefnqwf wfqwnf wqefjqwefiwqf qwfiuqwbef
-		lorem ipsum pupsi tutsi then google boogle toogle doogle me em truefwiebceb sdcdhbcodhb schsbcshb
-		svcbdhvbwhvbwe eurbvewur ewurgfybewurg euvhbwejv ev gfi wed2iu fiwfjn sadkfnwoeifqeo qwefoihweqbfuhb
-		wfqewhbfrqeu qweoifhhbqewof qw fqf qfqiwjefnqwf wfqwnf wqefjqwefiwqf qwfiuqwbef
-		lorem ipsum pupsi tutsi then google boogle toogle doogle me em truefwiebceb sdcdhbcodhb schsbcshb
-		svcbdhvbwhvbwe eurbvewur ewurgfybewurg euvhbwejv ev gfi wed2iu fiwfjn sadkfnwoeifqeo qwefoihweqbfuhb
-		wfqewhbfrqeu qweoifhhbqewof qw fqf qfqiwjefnqwf wfqwnf wqefjqwefiwqf qwfiuqwbef
-		lorem ipsum pupsi tutsi then google boogle toogle doogle me em truefwiebceb sdcdhbcodhb schsbcshb
-		svcbdhvbwhvbwe eurbvewur ewurgfybewurg euvhbwejv ev gfi wed2iu fiwfjn sadkfnwoeifqeo qwefoihweqbfuhb
-		wfqewhbfrqeu qweoifhhbqewof qw fqf qfqiwjefnqwf wfqwnf wqefjqwefiwqf qwfiuqwbef
-		lorem ipsum pupsi tutsi then google boogle toogle doogle me em truefwiebceb sdcdhbcodhb schsbcshb
-		svcbdhvbwhvbwe eurbvewur ewurgfybewurg euvhbwejv ev gfi wed2iu fiwfjn sadkfnwoeifqeo qwefoihweqbfuhb
-		wfqewhbfrqeu qweoifhhbqewof qw fqf qfqiwjefnqwf wfqwnf wqefjqwefiwqf qwfiuqwbef
-		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
-		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
-		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
-		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
-		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
-		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
-		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
-		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
-		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
-		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
-		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
-		m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>m<p>
+		<h1>Новости</h1>
+		{% include "subtemplates/news.html" %}
+		<br/>
+		<h1>Анонсы конференций</h1>
+		{% include "subtemplates/conference_announcements.html" %}
+		<br/>
+		<h1>Предстоящие семинары</h1>
+		{% include "subtemplates/seminar_announcements.html" %}
+		<br/>
+		<h1>Состоявшиеся семинары</h1>
+		{% include "subtemplates/seminars.html" %}
 	</div>
 
 <script>

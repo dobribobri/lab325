@@ -232,7 +232,108 @@ div.menu li:hover > ul > li {
 /***** Content *****/
 .content {
     padding: 0 3% 0 2%;
+    text-align: left;
+}
+
+div.block {
+    margin-bottom: 30px;
+}
+
+.field_caption {
+    width: 100%;
+    text-align: left;
+    padding-top: 8px;
+}
+
+h1 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: x-large;
+    line-height: 30px;
+    width: 100%;
+    display: inline-block;
+    color: darkblue;
+}
+
+h2 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: medium;
+    line-height: 30px;
+    width: 100%;
+    display: inline-block;
+    color: darkblue;
+}
+
+.field_desc {
+    margin-top: 6px;
+    width: 100%;
     text-align: justify;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 8px;
+}
+
+.field_image {
+    margin-top: 12px;
+    width: 80%;
+    text-align: center;
+}
+.field_image img {
+    width: 80%;
+}
+
+.field_when {
+    padding: 30px 0px 0px 10px;
     font-family: Montserrat;
 }
 
+.field_where {
+    padding: 20px 0px 6px 10px;
+    font-family: Montserrat;
+}
+
+.field_file {
+    margin-top: 10px;
+    text-align: left;
+    font-family: Montserrat;
+    font-size: small;
+    margin-bottom: 30px;
+}
+
+.field_filetype {
+    display: inline-block;
+    margin: 15px 30px 5px 30px;
+    font-family: Ubuntu;
+    font-size: small;
+}
+.file_download {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+/***** rwp-ras styles *****/
+
+.sep-8 { width: 100%; height: 8px; }
+.fullw { width: 100%; }
+.tj { text-align: justify; }
+.tl { text-align: left; }
+.tr { text-align: right; }
+.tc { text-align: center; }
+.pl-5 { padding-left: 5px; }
+.pl-10 { padding-left: 10px; }
+.pl-15 { padding-left: 15px; }
+.pl-20 { padding-left: 20px; }
+.pl-25 { padding-left: 25px; }
+.pl-30 { padding-left: 30px; }
+.pr-5 { padding-right: 5px; }
+.pr-10 { padding-right: 10px; }
+.pr-15 { padding-right: 15px; }
+.pr-20 { padding-right: 20px; }
+.pr-25 { padding-right: 25px; }
+.pr-30 { padding-right: 30px; }
+.border-0 { border: 0px; }
+.montserrat { font-family: Montserrat; }

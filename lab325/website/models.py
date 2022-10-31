@@ -88,6 +88,10 @@ class AnnouncementSeminarBlock(models.Model):
     when = models.CharField(verbose_name='Когда', max_length=254)
     where = models.CharField(verbose_name='Где', max_length=254)
 
+    file = models.FileField(verbose_name='Прикрепить файл (извещение)', null=True, blank=True)
+    filetype = models.CharField(verbose_name='Тип файла', max_length=254, null=True, blank=True,
+                                choices=FileTypes.choices)
+
     def __str__(self):
         return "Анонс - " + str(self.caption)
 
@@ -166,6 +170,10 @@ class LaboratoryMemberBlock(models.Model):
     image = models.ImageField(verbose_name='Фотография (3x4)', null=True, blank=True)
 
     desc = models.TextField(verbose_name='Информация', null=True, blank=True)
+
+    file = models.FileField(verbose_name='Прикрепить файл (CV)', null=True, blank=True)
+    filetype = models.CharField(verbose_name='Тип файла', max_length=254, null=True, blank=True,
+                                choices=FileTypes.choices)
 
     def __str__(self):
         return "Сотрудник - " + str(self.fio)
@@ -271,6 +279,11 @@ class Publication(models.Model):
 
     fio_affiliation = models.TextField(verbose_name='Полные ФИО и аффилиации авторов',
                                        null=True, blank=True)
+
+    file = models.FileField(verbose_name='Прикрепить файл публикации', null=True, blank=True)
+    filetype = models.CharField(verbose_name='Тип файла', max_length=254, null=True, blank=True,
+                                choices=FileTypes.choices)
+    url = models.CharField(verbose_name='Ссылка на сайт издательства', max_length=254, null=True, blank=True)
 
     def __str__(self):
         return "" + str(self.authors) + " " + str(self.name) + \
