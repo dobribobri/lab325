@@ -134,6 +134,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Other
 
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 LOGIN_REDIRECT_URL = "index"

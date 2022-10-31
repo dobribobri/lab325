@@ -29,6 +29,7 @@
 		<div class="security">
 			{% if user.is_authenticated %}
 				Вы вошли как {{ username }}&nbsp;&nbsp;|&nbsp;&nbsp;
+				<a href="admin">Панель администратора</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 				<a href="{% url 'settings' %}">Профиль</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 				<a href="{% url 'logout' %}">Выход</a>
 			{% else %}
@@ -39,7 +40,13 @@
 
 		<div class="menu" onclick="menuClick();">
 			<ul id="menu_content">
-				<li><a href="{% url 'index' %}" class="selected">&nbsp;&nbsp;Новости&nbsp;</a></li>
+				<li><a href="{% url 'index' %}" class="selected">&nbsp;&nbsp;Главная&nbsp;</a>
+					<ul>
+						<li><a href="#">Анонсы конференций</a></li>
+						<li><a href="#">Анонсы семинаров</a></li>
+						<li><a href="#">Прошедшие семинары</a></li>
+					</ul>
+				</li>
 				<li><a href="#">Исследования</a>
 					<ul>
 						<li><a href="#">Участие в грантах</a></li>
